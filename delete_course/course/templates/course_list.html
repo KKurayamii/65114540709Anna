@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course List</title>
+</head>
+<body>
+    <h1>รายการรายวิชา</h1>
+git 
+    <ul>
+        {% for course in courses %}
+        <li>
+            <strong>{{ course.name }}</strong> ({{ course.code }})
+            <p>{{ course.description }}</p>
+            <a href="{% url 'edit_course' course.code %}">แก้ไข</a>
+            <a href="{% url 'delete_course' course.code %}">ลบ</a>
+        </li>
+        {% empty %}
+        <li>ไม่มีข้อมูลรายวิชา</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
