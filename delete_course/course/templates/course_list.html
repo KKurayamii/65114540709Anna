@@ -13,7 +13,6 @@ git
         <li>
             <strong>{{ course.name }}</strong> ({{ course.code }})
             <p>{{ course.description }}</p>
-            <a href="{% url 'edit_course' course.code %}">แก้ไข</a>
             <a href="{% url 'delete_course' course.code %}">ลบ</a>
         </li>
         {% empty %}
