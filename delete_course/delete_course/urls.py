@@ -16,10 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from course import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('courses/', views.course_list, name='course_list'),
     path('course/delete/<str:course_code>/', views.delete_course, name='delete_course'),
 
